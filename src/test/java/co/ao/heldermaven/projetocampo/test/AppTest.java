@@ -1,4 +1,4 @@
-package co.ao.heldermaven.projetocampo;
+package co.ao.heldermaven.projetocampo.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
