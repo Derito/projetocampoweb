@@ -1,5 +1,7 @@
 package co.ao.heldermaven.projetocampo.test;
 
+import java.util.List;
+
 import co.ao.heldermaven.projetocampo.entidade.Usuario;
 import co.ao.heldermaven.projetocampo.persistencia.jdbc.UsuarioDAO;
 
@@ -7,7 +9,10 @@ public class TestUsuarioDAO {
 
 	public static void main(String[] args) {
 		//testAlterar();
-		testExcluir();
+		//testExcluir();
+		//testSalvar();
+		//testBuscaPorId();
+		testBuscaTodos();
 	}
 		
 	public static void testCadastrar() {
@@ -45,5 +50,33 @@ public class TestUsuarioDAO {
 		
 		System.out.println("Excluido com sucesso!");
 
+	}
+	public static void testSalvar() {
+		Usuario uso = new Usuario();
+		uso.setId(7);
+		uso.setNome("Manuel ftu");
+		uso.setLogin("re3");
+		uso.setSenha("1234");
+		
+		UsuarioDAO usoDAO = new UsuarioDAO();
+		usoDAO.salvar(uso);
+		
+		System.out.println("Salvo com sucesso!");
+	}
+	public static void testBuscaPorId() {
+		
+		UsuarioDAO usoDAO = new UsuarioDAO();
+		Usuario uso = usoDAO.buscaPorId(2);
+		System.out.println(uso);
+		
+	}
+	public static void testBuscaTodos() {
+		
+		UsuarioDAO usoDAO = new UsuarioDAO();
+		List<Usuario> lista = usoDAO.buscaTodos();
+		for(Usuario u: lista) {
+					
+		System.out.println(u);
+		}
 	}
 }
